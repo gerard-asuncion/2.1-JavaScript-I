@@ -76,3 +76,35 @@ function comparar(num1, num2){
 console.log("Exercici 2:");
 console.log(comparar(num1, num2));
 
+
+// 1.3: Callbacks
+
+console.log("1.3: Callbacks")
+
+// Nivell 1
+
+// Exercici 1
+
+const num = 2;
+
+const processar = (num, callback) => callback(num);
+
+function callback(num) { return num };
+
+console.log("Exercici 1:")
+console.log(processar(num, callback));
+
+// Exercici 2
+
+const num3 = 4;
+const num4 = 6;
+
+const calculadora = (num1, num2, callback) => callback(num1, num2);
+
+const calcular = (num1, num2) => num1 + num2;
+
+console.log("Exercici 2:")
+console.log(calculadora(num3, num4, calcular));
+
+
+
