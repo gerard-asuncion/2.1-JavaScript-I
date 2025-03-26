@@ -135,3 +135,49 @@ function suma(...num) {
 
 console.log("Exercici 2:");
 console.log(suma(1, 2, 3, 4));
+
+
+// 1.5: Array transformations
+
+console.log("1.5: Array transformations")
+
+// Nivell 1
+
+// Exercici 1
+
+const arr4 = [1, 2, 3, 4];
+
+let newArr1 = arr4.map(num => num * num);
+
+console.log("Exercici 1:");
+console.log(newArr1);
+
+// Exercici 2
+
+let newArr2 = arr4.filter(num => num % 2 == 0);
+
+console.log("Exercici 2:");
+console.log(newArr2);
+
+// Exercici 3
+
+const arr5 = [1, 10, 8, 11];
+
+let newArr3 = arr5.filter(num => num > 10);
+
+console.log("Exercici 3:");
+console.log(newArr3);
+
+// Exercici 4
+
+const arr6 = [13, 7, 8, 21]; // suma 49
+
+let newArr4 = arr6.reduce((suma, num) => suma + num);
+
+console.log("Exercici 4:");
+console.log(newArr4);
+
+
+
+
+
