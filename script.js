@@ -107,4 +107,31 @@ console.log("Exercici 2:")
 console.log(calculadora(num3, num4, calcular));
 
 
+// 1.4: Rest & Spread operators
 
+console.log("1.4: Rest & Spread operators")
+
+// Nivell 1
+
+// Exercici 1
+
+const arr1 = [0, 1, 2, 3, 4];
+const arr2 = [5, 6, 7, 8, 9];
+
+const arr3 = [...arr1, ...arr2];
+
+console.log("Exercici 1:");
+console.log(arr3);
+
+// Exercici 2
+
+function suma(...num) {
+    let total = 0;
+    for(let i = 0; i < num.length; i++){
+        total += num[i];
+    }
+    return total
+}
+
+console.log("Exercici 2:");
+console.log(suma(1, 2, 3, 4));
