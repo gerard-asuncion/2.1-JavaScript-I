@@ -44,3 +44,35 @@ person1.greet();
 
 
 
+// 1.2: Operador ternari
+
+console.log("1.2: Operador ternari")
+
+// Nivell 1
+
+// Exercici 1
+
+function potConduir(edat) {
+    let missatge = "";
+    edat >= 18 ? missatge = "Pots conduir" : missatge = "No pots conduir";
+    return missatge;
+}
+
+console.log("Exercici 1:");
+console.log(potConduir(5));
+console.log(potConduir(18));
+
+// Exercici 2
+
+const num1 = 5;
+const num2 = 10;
+
+function comparar(num1, num2){
+    let missatge = "";
+    num1 > num2 ? missatge = "num1 és més gran" : missatge = "num2 és més gran";
+    return missatge;
+}
+
+console.log("Exercici 2:");
+console.log(comparar(num1, num2));
+
