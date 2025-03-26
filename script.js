@@ -178,6 +178,35 @@ console.log("Exercici 4:");
 console.log(newArr4);
 
 
+// 1.6: Array loops
+
+console.log("1.6: Array loops");
+
+// Nivell 1
+
+// Exercici 1
+
+const noms = ['Anna', 'Bernat', 'Clara'];
+
+console.log("Exercici 1:")
+noms.forEach(nom => console.log(nom));
+
+// Exercici 2
+
+console.log("Exercici 2:")
+for(let i of noms){
+    console.log(i);
+}
+
+// Exercici 3
+
+const arrNum = [1, 2, 3, 4, 5, 6]
+
+let newArrNum = arrNum.filter(num => num % 2 == 0);
+
+console.log("Exercici 3:")
+console.log(newArrNum)
+
 
 
 
