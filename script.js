@@ -208,5 +208,62 @@ console.log("Exercici 3:")
 console.log(newArrNum)
 
 
+// 1.7: Promises & Async/Await
 
+console.log("1.7: Promises & Async/Await")
 
+// Nivell 1
+
+console.log("Exercicis 1, 2 i 3:")
+
+// Exercici 1
+
+const thePromise = new Promise(resolve => {
+    setTimeout(() => {
+        resolve("Hola, món!");
+    }, 2000);
+});
+
+// Exercici 2
+
+thePromise.then(message => {
+    console.log(message);
+});
+
+// Exercici 3
+
+let input = "Hola"
+
+const secondPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        if(input == "Hola"){
+            resolve("second promise solved");
+        } else {
+            reject("second promise not solved");
+        }        
+    }, 2000);
+});
+
+secondPromise.then(message => {
+    console.log(message);
+}).catch(message => {
+    console.log(message);
+});
+
+// Exercici 4
+
+function myPromise(){
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Hola, món!");
+        }, 2000);
+    });
+}
+
+async function isMyPromise(){
+    const thePromise = await myPromise();
+    console.log("Exercici 4:");
+    console.log(thePromise);
+}
+
+isMyPromise();
