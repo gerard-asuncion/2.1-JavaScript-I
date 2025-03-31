@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gerard Asuncion">
+    <meta name="keywords" content="javascript, arrow functions, callbacks, async, promises, operators, arrays">
+    <meta name="description" content="Exercises with JavaScript">
+    <title>Sprint 2.1 - Exercicis bàsics de JavaScript</title>
+</head>
+<body>
+    <section class="1-1-arrow-functions">
+        <h1>Exercici 1.1: Arrow functions</h1>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>Conversió de funcions: Tens una funció add que accepta dos paràmetres i retorna la seva suma. 
+                Converteix-la en una funció de fletxa. Per exemple: function add(a, b) {return a + b;}.</p>
+            <div>
+                <input type="number" name="param1" id="param1">
+                <input type="number" name="param2" id="param2">
+                <button onclick="arrowFunctions1()">Sumar</button> <br>
+                <div id="result-1-1-1"></div>
+            </div>       
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>Funció de fletxa sense paràmetres: Crea una funció de fletxa anomenada randomNumber que no necessiti
+                paràmetres i que retorni un número aleatori entre 0 i 100.</p>
+                <div>
+                    <button onclick="arrowFunctions2()">Generar número</button> <br><br>
+                    <div id="result-1-1-2"></div>
+                </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 3</h2>
+            <p>Ús de 'this' en les funcions de fletxa: Crea una classe person que tingui una propietat name i una funció 
+                greet que utilitzi una funció de fletxa. La funció ha d'imprimir una salutació que inclogui el nom de la persona. 
+                Per exemple: console.log(Hola, ${this.name});.</p>
+                <div>
+                    <p><pre>
+                        Codi:
+
+                        class Person {
+                            #name;
+                            constructor(name) {
+                                this.#name = name
+                            }
+                            
+                            get name() { return this.#name }
+                        
+                            greet = () => console.log(this.name);
+                        
+                        }
+                        
+                        const person1 = new Person("Gerard");
+                        
+                        person1.greet();
+                    </pre></p>
+                    <button onclick="arrowFunctions3()">Imprimir nom per consola</button> <br><br>
+                </div>
+        </div>
+    </section>
+    <section class="1-2-operador-ternari">
+        <h1>1.2: Operador ternari</h1>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>Operador ternari bàsic: Escriu una funció potConduir que accepti l'edat com a paràmetre i utilitzi 
+                l'operador ternari per determinar si l'usuari pot conduir. Si l'edat és 18 o més, ha de retornar 
+                'Pots conduir'. Si no, ha de retornar 'No pots conduir'.</p>
+            <div>
+                <input type="number" name="userAge" id="userAge">
+                <button onclick="ternari1()">¿Pot conduir?</button><br><br>
+                <div id="result-1-2-1"></div>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>Ús amb operadors de comparació: Escriu una expressió que utilitzi l'operador ternari per determinar 
+                quin dels dos nombres donats (num1 i num2) és més gran. Si num1 és més gran, retorna 'num1 és més gran'. 
+                Si no, retorna 'num2 és més gran'.</p>
+            <div>
+                <label for="num1">Num 1:</label>
+                <input type="number" name="num1" id="num1">
+                <label for="num2">Num 2:</label>
+                <input type="number" name="num2" id="num2">
+                <button onclick="ternari2()">Quin ho és?</button> <br><br>
+                <div id="result-1-2-2"></div>
+            </div>
+        </div>
+    </section>
+    <section class="1-3-callbacks">
+        <h1>1.3: Callbacks</h1>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>Callback bàsic: Escriu una funció anomenada processar que accepti dos paràmetres: un nombre i una 
+                funció de callback. La funció processar ha d'invocar la funció de callback, passant el nombre com a paràmetre.</p>
+            <div>
+                <input type="number" name="num3" id="num3">
+                <button onclick="callbacks1()">Invocar funció callback</button>
+                <p>*(S'ha de mostrar el número per consola)</p>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>Callbacks amb operacions matemàtiques: Escriu una funció calculadora que accepti tres paràmetres: 
+                dos nombres i una funció de callback. La funció calculadora ha d'invocar la funció de callback amb els 
+                dos nombres com a paràmetres. Després, crida calculadora amb una funció que faci la suma dels dos nombres.</p>
+            <div>
+                <p><pre>
+                    Codi:
+
+                    const number1 = 4;
+                    const number2 = 6;
+
+                    const calculadora = (num1, num2, callback) => callback(num1, num2);
+
+                    const calcular = (num1, num2) => num1 + num2;
+                    
+                    const resultat = calculadora(number1, number2, calcular);
+                </pre></p>
+                <div>
+                    <button onclick="callbacks2()">Resultat</button> <br><br>
+                    <div id="result-1-3-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="1-4-rest-spread-operators">
+        <h1>1.4: Rest & Spread Operators</h1>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>Operador Spread en Arrays: Crea dues arrays, array1 i array2. Utilitza l'operador spread 
+                per a crear una tercera array que contingui tots els elements de array1 i array2.</p>
+            <div>
+                <p><pre>
+                    Codi:
+
+                    const arr1 = [0, 1, 2, 3, 4];
+                    const arr2 = [5, 6, 7, 8, 9];
+
+                    const arr3 = [...arr1, ...arr2];
+                </pre></p>
+            </div>
+            <div>
+                <button onclick="restSpread1()">Spread</button><br><br>
+                <div id="result-1-4-1"></div>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>Operador Rest en Funcions: Crea una funció 'suma' que utilitzi l'operador rest per a acceptar un nombre 
+                indeterminat d'arguments i retornar la seva suma.</p>
+            <div>
+                <button onclick="restSpread2()">Començar</button><br><br>
+                <div id="result-1-4-2"></div>
+            </div>
+        </div>
+    </section>
+    <section class="1-5-array-transformations">
+        <h1>1.5: Array transformations</h1>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>Map: Teniu un array de números [1, 2, 3, 4]. Crea una nova array que contingui el quadrat de cada número.</p>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>Filter: Teniu una array de números [1, 2, 3, 4]. Crea una nova array que només contingui els números parells.</p>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 3</h2>
+            <p>Find: Teniu una array de números [1, 10 , 8, 11]. Utilitza la funció find per a trobar el primer número que 
+                és major a 10.</p>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 4</h2>
+            <p>Reduce: Teniu una array de números [13, 7, 8, 21]. Fes servir la funció reduce per a calcular 
+                la suma total dels números.</p>
+        </div>
+        <div>
+            <button onclick="arrayTransformations1a4()">Solucionar de l'1 al 4</button>
+            <p>*(El resultat es mostra per consola)</p>
+        </div>
+    </section>
+    <section class="1-6-array-loops">
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>forEach: Teniu una array de noms. Utilitza forEach per a
+                imprimir cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];</p>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir cada nom a la consola: 
+                let noms = ['Anna', 'Bernat', 'Clara'];</p>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 3</h2>
+            <p>for-of: Teniu una array de noms. Utilitza un bucle for-of per a imprimir 
+                cada nom a la consola: let noms = ['Anna', 'Bernat', 'Clara'];</p>
+        </div>
+        <div>
+            <button onclick="arrayLoops1a3()">Solucionar de l'1 al 3</button>
+        </div>
+    </section>
+    <section class="1-7-promises-async-await">
+        <h1>1.7: Promises & Async/Await</h1>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 1</h2>
+            <p>Creació d'una Promesa: Crea una promesa que es resolgui després de 2 segons i 
+                que retorni la cadena de text 'Hola, món'.</p>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 2</h2>
+            <p>Utilització d'una Promesa: Utilitza la promesa creada en l'exercici anterior. 
+                Crea un .then que imprimeixi el resultat a la consola.</p>
+            <div>
+                <button onclick="promises1a2()">Solucionar 1 i 2</button>
+                <p>*(resultat per consola)</p>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 3</h2>
+            <p>Promesa amb reject: Crea una promesa que es resolgui després de 2 segons si l'input és igual 
+                a 'Hola', i que la rebutgi si l'input és qualsevol altra cosa.</p>
+            <div>
+                <label for="inputHola">Escriu-hi "Hola":</label>
+                <input type="text" name="inputHola" id="inputHola">
+                <button onclick="promises3()">Introduir</button><br><br>
+                <div id="result-1-7-3"></div>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 1, exercici 4</h2>
+            <p>Ús de async/await: Escriu una funció asíncrona que utilitzi la funció await per a esperar el resultat 
+                de la promesa creada a l'exercici 1, i que després imprimeixi aquest resultat a la consola.</p>
+            <div>
+                <button onclick="promises4()">Resoldre</button>
+                <p>*(resultat per consola)</p>
+            </div>
+        </div>
+    </section>
+    
+    <script src="main.js"></script>
+</body>
+</html>

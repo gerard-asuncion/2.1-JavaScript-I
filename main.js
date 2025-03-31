@@ -1,0 +1,309 @@
+"use strict";
+
+// 1.1 Arrow functions
+
+// Ex 1
+
+function arrowFunctions1() {
+    let a = parseFloat(document.getElementById("param1").value);
+    let b = parseFloat(document.getElementById("param2").value);
+    let result = document.getElementById("result-1-1-1");
+
+    const add = (a, b) => a + b;
+
+    result.innerHTML = `
+    <pre>const add = (a, b) => a + b;
+    El resultat és: ${add(a, b)}.</pre>`
+}
+
+// Ex 2
+
+function arrowFunctions2() {
+    let result = document.getElementById("result-1-1-2");
+
+    const randomize = () => Math.round(Math.random() * 100);
+
+    let randomNumber = randomize();
+
+    result.innerHTML = `Número: ${randomNumber}.`;
+}
+
+// Ex 3
+
+function arrowFunctions3() {
+
+    class Person {
+        #name;
+        constructor(name) {
+            this.#name = name
+        }
+        
+        get name() { return this.#name }
+    
+        greet = () => console.log(this.name);
+    
+    }
+    
+    const person1 = new Person("Gerard");
+    
+    person1.greet();
+
+}
+
+// 1.2 Operador ternari
+
+// Ex 1
+
+function ternari1(){
+
+    let edat = parseInt(document.getElementById("userAge").value);
+    let result = document.getElementById("result-1-2-1")
+
+    function potConduir(edat) {
+        let missatge = "";
+        edat >= 18 ? missatge = "Pot conduir" : missatge = "No pot conduir";
+        return missatge;
+    }
+
+    const condueix = potConduir(edat);
+
+    result.innerHTML = condueix;
+
+}
+
+// Ex 2
+
+function ternari2(){
+    
+    const num1 = parseFloat(document.getElementById("num1").value);
+    const num2 = parseFloat(document.getElementById("num2").value);
+    const result = document.getElementById("result-1-2-2");
+
+    function comparar(num1, num2){
+        let missatge = "";
+        num1 > num2 ? missatge = "Num1 és més gran." : missatge = "Num2 és més gran.";
+        return missatge;
+    }
+
+    const comparacio = comparar(num1, num2);
+    result.innerHTML = comparacio;
+}
+
+// 1.3: Callbacks
+
+// Ex 1
+
+function callbacks1(){
+
+    const num = parseFloat(document.getElementById("num3").value);
+
+    const processar = (num, callback) => callback(num);
+
+    function igualar(num) { return num };
+
+    console.log(processar(num, igualar));
+}
+
+// Ex 2
+
+function callbacks2(){
+
+    const result = document.getElementById("result-1-3-2");
+
+    const number1 = 4;
+    const number2 = 6;
+
+    const calculadora = (num1, num2, callback) => callback(num1, num2);
+
+    const calcular = (num1, num2) => num1 + num2;
+    
+    const resultat = calculadora(number1, number2, calcular);
+    result.innerHTML = `El resultat és: ${resultat}.`
+
+}
+
+// 1.4: rest & spread operators
+
+// Ex 1
+
+function restSpread1(){
+
+    const result = document.getElementById("result-1-4-1");
+
+    const arr1 = [0, 1, 2, 3, 4];
+    const arr2 = [5, 6, 7, 8, 9];
+
+    const arr3 = [...arr1, ...arr2];
+
+    result.innerHTML = arr3.join(", ") + "."
+
+}
+
+// Ex 2
+
+function restSpread2(){
+
+    const numeros = [];
+    const resultat = document.getElementById("result-1-4-2");
+
+    for(let i = 1; i <= 4; i++){
+        const numero = parseFloat(prompt(`Introdueix un número (${i}/4)`));
+        if(isNaN(numero)) return alert("Ha de ser un número!");
+        numeros.push(numero);
+    }
+
+    function suma(...num) {
+        let total = 0;
+        for(let i = 0; i < num.length; i++){
+            total += num[i];
+        }
+        return total
+    }
+
+    const resultatSuma = suma(numeros[0], numeros[1], numeros[2], numeros[3])
+
+    resultat.innerHTML = `La suma dels quatre números és: ${resultatSuma}.`
+    
+}
+
+// 1.5: Array transformations
+
+// Ex 1 al 4
+
+function arrayTransformations1a4(){
+
+    // Exercici 1
+
+    const arr4 = [1, 2, 3, 4];
+
+    let newArr1 = arr4.map(num => num * num);
+
+    console.log("Exercici 1:");
+    console.log(newArr1);
+
+    // Exercici 2
+
+    let newArr2 = arr4.filter(num => num % 2 == 0);
+
+    console.log("Exercici 2:");
+    console.log(newArr2);
+
+    // Exercici 3
+
+    const arr5 = [1, 10, 8, 11];
+
+    let newArr3 = arr5.filter(num => num > 10);
+
+    console.log("Exercici 3:");
+    console.log(newArr3);
+
+    // Exercici 4
+
+    const arr6 = [13, 7, 8, 21]; // suma 49
+
+    let newArr4 = arr6.reduce((suma, num) => suma + num);
+
+    console.log("Exercici 4:");
+    console.log(newArr4);
+
+}
+
+// 1.6: Array loops
+
+// Nivell 1, ex 1 al 3
+
+function arrayLoops1a3(){
+
+    // Exercici 1
+
+    const noms = ['Anna', 'Bernat', 'Clara'];
+
+    console.log("Exercici 1:")
+    noms.forEach(nom => console.log(nom));
+
+    // Exercici 2
+
+    console.log("Exercici 2:")
+    for(let i of noms){
+        console.log(i);
+    }
+
+    // Exercici 3
+
+    const arrNum = [1, 2, 3, 4, 5, 6]
+
+    let newArrNum = arrNum.filter(num => num % 2 == 0);
+
+    console.log("Exercici 3:")
+    console.log(newArrNum)
+
+}
+
+// 1.7: Promises & Async/Await
+
+function promises1a2(){
+
+    // Exercici 1
+
+    const thePromise = new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Hola, món!");
+        }, 2000);
+    });
+
+    // Exercici 2
+
+    thePromise.then(message => {
+        console.log(message);
+    });
+
+}
+
+// Ex 3
+
+function promises3() {
+
+    let input = document.getElementById("inputHola").value;
+    const resultat = document.getElementById("result-1-7-3");
+
+    const secondPromise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(input == "Hola"){
+                resolve("second promise solved.");
+            } else {
+                reject("second promise not solved.");
+            }        
+        }, 2000);
+    });
+
+    secondPromise.then(message => {
+        resultat.innerHTML = message;
+    }).catch(message => {
+        resultat.innerHTML = message;
+    });
+
+}
+
+// Ex 4
+
+function promises4(){
+
+    function myPromise(){
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve("Hola, món!");
+            }, 2000);
+        });
+    }
+    
+    async function isMyPromise(){
+        const thePromise = await myPromise();
+        console.log("Exercici 4:");
+        console.log(thePromise);
+    }
+    
+    isMyPromise();
+    
+}
+
+
