@@ -50,6 +50,33 @@ function arrowFunctions3() {
 
 }
 
+// Ex 4
+
+function arrowFunctions4(){
+    const arr = [1, 2, 3, 4, 5];
+
+    const printNumbers = function(arr) {
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+    }
+    
+    printNumbers(arr);
+}
+
+// Ex 5
+
+function arrowFunctions5(){
+
+    const timeOutFunction = () => {
+        setTimeout(() => {
+            console.log("arrow functions ex. 5");
+        }, 3000);
+    }
+
+    timeOutFunction();
+}
+
 // 1.2 Operador ternari
 
 // Ex 1
@@ -87,6 +114,46 @@ function ternari2(){
 
     const comparacio = comparar(num1, num2);
     result.innerHTML = comparacio;
+}
+
+// Ex 3
+
+function ternari3(){
+    const num1 = parseFloat(document.getElementById("numA").value);
+    const num2 = parseFloat(document.getElementById("numB").value);
+    const num3 = parseFloat(document.getElementById("numC").value);
+    const result = document.getElementById("result-1-2-3");
+
+    const trobarMaxim = function(a, b, c) {
+        let maxim = ((a > b) && (a > c)) ? "Num 1" :
+                    ((b > a) && (b > c)) ? "Num 2" :
+                    ((c > a) && (c > b)) ? "Num 3" :
+                    (a == b || a == c || b == c) ? "Els tres números han de ser diferents." :
+                    "Escriu tres números."
+        return maxim
+    }
+
+    const missatge = trobarMaxim(num1, num2, num3);
+    result.innerHTML = missatge;
+
+}
+
+// Ex 4
+
+function ternari4(){
+
+    const arr = [11, 2, 46, 1001, 77, 4, 5, 7]
+
+    const parOImpar = function(array) {
+        const result = document.getElementById("result-1-2-4");
+        let missatge = ""
+        for(let i = 0; i < array.length; i++){
+            (array[i] % 2 == 0) ? missatge = `El número ${array[i]} és parell.` : missatge = `El número ${array[i]} és imparell.`
+            result.innerHTML += missatge + "<br>"
+        }
+    }
+
+    parOImpar(arr);
 }
 
 // 1.3: Callbacks
