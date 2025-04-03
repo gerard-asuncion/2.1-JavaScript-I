@@ -244,7 +244,7 @@ function callbacks5(){
     const printFunction = (text) => result.innerHTML = text;
 
     processarCadena(string, printFunction);
-    
+
 }
 
 // 1.4: rest & spread operators
@@ -289,6 +289,69 @@ function restSpread2(){
 
     resultat.innerHTML = `La suma dels quatre números és: ${resultatSuma}.`
     
+}
+
+// Ex 3
+
+function restSpread3(){
+
+    const originalObject = {
+        music: "reggae", 
+        country: "Jamaica",
+        religion: "rastafari"
+    }
+
+    let copyObject = {...originalObject}
+
+    copyObject.music = "Jungle"
+
+    console.log("Original object:")
+    console.log(originalObject)
+    console.log("Copy object:")
+    console.log(copyObject)
+
+}
+
+// Ex 4
+
+function restSpread4(){
+
+    let a, b, rest;
+    [a, b, ...rest] = [10, 20, 30, 40, 50]
+
+    console.log("array:")
+    console.log([10, 20, 30, 40, 50])
+    console.log("Element 1:")
+    console.log(a)
+    console.log("Element 2:")
+    console.log(b)
+    console.log("Resta:")
+    console.log(rest)
+}
+
+// Ex 5
+
+function restSpread5(){
+    const result = document.getElementById("result-1-4-5")
+    const arr = [1, 2, 3];
+    const sumFunction = (a, b, c) => a + b + c;
+    const execute = sumFunction(...arr);
+    result.innerHTML = execute;
+}
+
+// Ex 6
+
+function restSpread6(){
+    const object1 = {
+        instrument: "sintetitzador",
+        nom: "Juno 106"
+    }
+    const object2 = {
+        origen: "Japó",
+        preu: 3000
+    }
+    const synthObject = {...object1, ...object2}
+    console.log(synthObject)
 }
 
 // 1.5: Array transformations

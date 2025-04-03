@@ -230,6 +230,60 @@
                 <div id="result-1-4-2"></div>
             </div>
         </div>
+        <div class="exercici">
+            <h2>Nivell 2, exercici 3</h2>
+            <p>Copiant objectes amb Spread: Crea un objecte 'objecte1'. Després crea un segon objecte, 'objecte2', 
+                que sigui una còpia de 'objecte1' utilitzant l'operador spread. Canvia una propietat de 'objecte2' i 
+                comprova que 'objecte1' no ha canviat.</p>
+            <div>
+                <button onclick="restSpread3()">Copiar</button>
+                <p>*(Els objectes es mostren a la consola)</p>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 2, exercici 4</h2>
+            <p>Rest en Destructuring: Crea una array amb diversos elements. Utilitza destructuring i l'operador 
+                rest per a assignar els primers dos elements a variables, i després assignar la resta dels elements a una tercera variable.</p>
+            <div>
+                <button onclick="restSpread4()">Assignar</button>
+                <p>*(El resultat es mostra a la consola)</p>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 3, exercici 5</h2>
+            <p>Spread en Funcions: Crea una funció que accepti tres arguments. Després, crea una array amb tres elements 
+                i crida la funció utilitzant l'operador spread amb aquesta array.
+            </p>
+            <div><pre>
+                const arr = [1, 2, 3];
+                const sumFunction = (a, b, c) => a + b + c;
+                const execute = sumFunction(...arr);
+            </pre></div>
+            <div>
+                <button onclick="restSpread5()">Cridar</button><br><br>
+                <div id="result-1-4-5"></div>
+            </div>
+        </div>
+        <div class="exercici">
+            <h2>Nivell 3, exercici 6</h2>
+            <p>Fusionant Objectes amb Spread: Crea dos objectes amb propietats diferents. Utilitza l'operador spread 
+                per a fusionar aquests dos objectes en un de nou.</p>
+            <div><pre>
+                const object1 = {
+                    instrument: "sintetitzador",
+                    nom: "Juno 106"
+                }
+                const object2 = {
+                    origen: "Japó",
+                    preu: 3000
+                }
+                const synthObject = {...object1, ...object2}
+                console.log(synthObject)
+            </pre></div>
+            <div>
+                <button onclick="restSpread6()">Fusionar</button>
+            </div>
+        </div>
     </section>
     <section class="1-5-array-transformations">
         <h1>1.5: Array transformations</h1>
