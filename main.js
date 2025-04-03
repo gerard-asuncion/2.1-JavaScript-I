@@ -189,6 +189,64 @@ function callbacks2(){
 
 }
 
+// Ex 3
+
+function callbacks3(){
+
+    const result = document.getElementById("result-1-3-3");
+
+    const esperarISaludar = (nom, callback) => {
+
+        setTimeout(() => {
+            callback(nom);
+        }, 2000);
+
+    }
+
+    const funcioCallback = (nom) => result.innerHTML = `Hola ${nom}!`
+
+    esperarISaludar("Aristòtil", funcioCallback);
+
+}
+
+// Ex 4
+
+function callbacks4(){
+
+    const result = document.getElementById("result-1-3-4");
+
+    const array = [1, 2, 3, 4, 5]
+
+    const processarElements = function (arr, callback) {
+        arr.forEach(item => callback(item));
+    }
+
+    const funcioCallback = (num) => {
+        result.innerHTML += `Número ${num} <br>`;
+    }
+
+    processarElements(array, funcioCallback);
+
+}
+
+// Ex 5
+
+function callbacks5(){
+
+    const result = document.getElementById("result-1-3-5");
+    const string = "cadena"
+
+    const processarCadena = function (string, callback) {
+        let mayus = string.toUpperCase();
+        callback(mayus);
+    }
+
+    const printFunction = (text) => result.innerHTML = text;
+
+    processarCadena(string, printFunction);
+    
+}
+
 // 1.4: rest & spread operators
 
 // Ex 1
