@@ -396,6 +396,44 @@ function arrayTransformations1a4(){
 
 }
 
+// Ex 5
+
+function arrayTransformations5(){
+
+    const divResult = document.getElementById("result-1-5-5");
+
+    const numbers = [1, 3, 7, 10, 15, 17, 11, 5, 8, 12, 9]
+
+    const superFunction = (arr) => {return arr.filter(num => num >= 10).map(num => num * 2).reduce((ac, curr) => ac + curr, 10)};
+
+    const result = superFunction(numbers);
+
+    divResult.innerHTML = result;
+
+}
+
+// Ex 6
+
+function arrayTransformations6(){
+
+    const result = document.getElementById("result-1-5-6")
+
+    const numbers = [11, 12, 13, 14]
+
+    const everyMethod = numbers.every(num => num > 10)
+
+    const someMethod = numbers.some(num => num > 10)
+
+    result.innerHTML = `
+    Every = ${everyMethod}
+    Some = ${someMethod}
+    `
+
+
+
+
+}
+
 // 1.6: Array loops
 
 // Nivell 1, ex 1 al 3
