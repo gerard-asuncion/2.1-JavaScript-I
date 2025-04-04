@@ -428,10 +428,6 @@ function arrayTransformations6(){
     Every = ${everyMethod}
     Some = ${someMethod}
     `
-
-
-
-
 }
 
 // 1.6: Array loops
@@ -462,6 +458,48 @@ function arrayLoops1a3(){
 
     console.log("Exercici 3:")
     console.log(newArrNum)
+
+}
+
+// Ex 4
+
+function arrayLoops4(){
+    const obj = {
+        nom: "Ona",
+        edat: 25,
+        ciutat: "Barcelona"
+    }
+
+    for(const property in obj){
+        console.log(`obj.${property} = ${obj[property]}`);
+    }
+}
+
+// Ex 5
+
+function arrayLoops5(){
+
+    const numbers = [1, 2, 3, 4, 5, 6]
+
+    for(let i of numbers){
+        if(i > 5) break;
+        console.log(i)
+    }
+
+}
+
+// Ex 6
+
+function arrayLoops6(){
+
+    const noms = ['Anna', 'Bernat', 'Clara']
+
+    let j = 1;
+
+    for(let i of noms){
+        console.log(`${i} està a la posició ${j}.`);
+        j++;
+    }
 
 }
 
@@ -530,6 +568,50 @@ function promises4(){
     
     isMyPromise();
     
+}
+
+function promises5(){
+
+    function myPromise(){
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve("Hola, món!");
+            }, 2000);
+        });
+    }
+    
+    async function isMyPromise(){
+        try {
+            const thePromise = await myPromise();
+            console.log("Exercici 5:");
+            console.log(thePromise);
+        } catch(error) {
+            console.log(error)
+        } finally {
+            console.log("finally")
+        }
+    }
+
+    isMyPromise();
+    
+}
+
+// Ex 6
+
+function promises6(){
+
+    const p1 = new Promise((resolve) => {
+        setTimeout(resolve, 2000, "promise 1");
+    })
+
+    const p2 = new Promise((resolve) => {
+        setTimeout(resolve, 3000, "promise 2");
+    })
+
+    Promise.all([p1, p2]).then(values => {
+        values.forEach(value => console.log(value));
+    });
+
 }
 
 
