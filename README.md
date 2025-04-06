@@ -10,7 +10,11 @@ Aquest exercici es compon de diversos exercicis breus, tocant diferents aspectes
 
 ## Requisits
 
-Hi ha dos arxius de JavaScript, main.js i script.js, un index.html i un styles.css. L'script de l'index.html enllaça amb el main.js, mentre que el script.js no està vinculat a cap html. El main.js té tots els exercicis de tots tres nivells i és fàcil comprobar-ne la funcionalitat a través de la pàgina html, que, a més conté tots els enunciats. L'script.js és una versió anterior, que conté només els exercicis del nivell 1. Aquest script es pot avaluar mitjançant node.js. Està plè de console.logs, de tal manera que és suficient amb obrir la terminal i executar l'arxiu, per tal d'invocar totes les funcions i veure'n el resultat.
+Hi ha dos arxius de JavaScript, main.js i script.js, un index.html i un styles.css. L'script de l'index.html enllaça amb el main.js, mentre que el script.js no està vinculat a cap html. 
+
+El main.js té tots els exercicis de tots tres nivells i és fàcil comprobar-ne la funcionalitat a través de la pàgina html, que, a més conté tots els enunciats i part del codi (la part més rellevant). 
+
+L'script.js és una versió anterior, que conté només els exercicis del nivell 1. Aquest script es pot avaluar mitjançant node.js. Està plè de console.logs, de tal manera que és suficient amb obrir la terminal i executar l'arxiu, per tal d'invocar totes les funcions i veure'n el resultat.
 
 - Node.js (opcional)
 
@@ -20,16 +24,16 @@ Hi ha dos arxius de JavaScript, main.js i script.js, un index.html i un styles.c
 
 - Si vols executar l'script.js, necessites node.js. Es pot fer amb la terminal, de la següent manera: 
 
-    # Download and install fnm:
+    ### Download and install fnm:
     winget install Schniz.fnm
 
-    # Download and install Node.js:
+    ### Download and install Node.js:
     fnm install 22
 
-    # Verify the Node.js version:
+    ### Verify the Node.js version:
     node -v # Should print "v22.13.1".
 
-    # Verify npm version:
+    ### Verify npm version:
     npm -v # Should print "10.9.2".
 
 

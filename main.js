@@ -128,7 +128,7 @@ function ternari3(){
         let maxim = ((a > b) && (a > c)) ? "Num 1" :
                     ((b > a) && (b > c)) ? "Num 2" :
                     ((c > a) && (c > b)) ? "Num 3" :
-                    (a == b || a == c || b == c) ? "Els tres números han de ser diferents." :
+                    (a == b && b == c) ? "Els tres números han de ser diferents." :
                     "Escriu tres números."
         return maxim
     }
@@ -380,7 +380,7 @@ function arrayTransformations1a4(){
 
     const arr5 = [1, 10, 8, 11];
 
-    let newArr3 = arr5.filter(num => num > 10);
+    let newArr3 = arr5.find(num => num > 10);
 
     console.log("Exercici 3:");
     console.log(newArr3);
