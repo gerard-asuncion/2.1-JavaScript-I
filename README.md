@@ -31,10 +31,10 @@ L'script.js és una versió anterior, que conté només els exercicis del nivell
     fnm install 22
 
     ### Verify the Node.js version:
-    node -v # Should print "v22.13.1".
+    node -v # hauria de mostrar "v22.13.1".
 
     ### Verify npm version:
-    npm -v # Should print "10.9.2".
+    npm -v # hauria de mostrar "10.9.2".
 
 
 ## Execució

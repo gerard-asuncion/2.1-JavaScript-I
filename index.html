@@ -152,7 +152,7 @@
                     <input type="number" name="numA" id="numA">
                     <label for="numB">Num 2:</label>
                     <input type="number" name="numB" id="numB">
-                    <label for="numC">Num 2:</label>
+                    <label for="numC">Num 3:</label>
                     <input type="number" name="numC" id="numC">
                     <button onclick="ternari3()">Quin és el més gran?</button> <br><br>
                     <div id="result-1-2-3"></div>
@@ -324,11 +324,12 @@
                 indeterminat d'arguments i retornar la seva suma.</p>
             <div>
                 <pre>
-                    const numeros = [];
-                    const resultat = document.getElementById("result-1-4-2");
+                    let numUsuari = parseInt(prompt("Quants números vols introduir?"));
 
-                    for(let i = 1; i <= 4; i++){
-                        const numero = parseFloat(prompt(`Introdueix un número (${i}/4)`));
+                    if(isNaN(numUsuari) || numUsuari < 1) return alert("Escriu una xifra vàlida");
+
+                    for(let i = 1; i <= numUsuari; i++){
+                        const numero = parseFloat(prompt(`Introdueix un número (${i}/${numUsuari})`));
                         if(isNaN(numero)) return alert("Ha de ser un número!");
                         numeros.push(numero);
                     }
@@ -341,7 +342,7 @@
                         return total
                     }
 
-                    const resultatSuma = suma(numeros[0], numeros[1], numeros[2], numeros[3])
+                    const resultatSuma = suma(...numeros)
 
                     resultat.innerHTML = `La suma dels quatre números és: ${resultatSuma}.`
                 </pre>

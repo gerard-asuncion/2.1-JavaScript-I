@@ -271,8 +271,12 @@ function restSpread2(){
     const numeros = [];
     const resultat = document.getElementById("result-1-4-2");
 
-    for(let i = 1; i <= 4; i++){
-        const numero = parseFloat(prompt(`Introdueix un número (${i}/4)`));
+    let numUsuari = parseInt(prompt("Quants números vols introduir?"));
+
+    if(isNaN(numUsuari) || numUsuari < 1) return alert("Escriu una xifra vàlida");
+
+    for(let i = 1; i <= numUsuari; i++){
+        const numero = parseFloat(prompt(`Introdueix un número (${i}/${numUsuari})`));
         if(isNaN(numero)) return alert("Ha de ser un número!");
         numeros.push(numero);
     }
@@ -285,7 +289,7 @@ function restSpread2(){
         return total
     }
 
-    const resultatSuma = suma(numeros[0], numeros[1], numeros[2], numeros[3])
+    const resultatSuma = suma(...numeros)
 
     resultat.innerHTML = `La suma dels quatre números és: ${resultatSuma}.`
     

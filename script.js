@@ -163,7 +163,7 @@ console.log(newArr2);
 
 const arr5 = [1, 10, 8, 11];
 
-let newArr3 = arr5.filter(num => num > 10);
+let newArr3 = arr5.find(num => num > 10);
 
 console.log("Exercici 3:");
 console.log(newArr3);
